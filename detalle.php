@@ -22,7 +22,7 @@
                     <a href="index.php" class="nav-link p-2 m-3 text-white nav-link-active">Catálogo</a>
                 </li>
                 <li class="nav-item">
-                    <a href="registro.php" class="nav-link p-2 m-3 text-white">Registrar Libro</a>
+                    <a href="registro.html" class="nav-link p-2 m-3 text-white">Registrar Libro</a>
                 </li>
             </ul>
         </nav>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-6 text-white col-lg-4">
                 <?php
-                $cn = new mysqli("localhost", "root", "", "catalogo");
+                include('./con_db.php');
                 $res = $cn->query("select * from libros where id=" . $_GET['l']);
                 while ($row = mysqli_fetch_row($res)) {
                     echo '<h2 class=" mb-4">' . $row[1] . '</h2>';

@@ -22,12 +22,12 @@
                     <a href="index.php" class="nav-link p-2 m-3 text-white nav-link-active">Catálogo</a>
                 </li>
                 <li class="nav-item">
-                    <a href="registro.php" class="nav-link p-2 m-3 text-white">Registrar Libro</a>
+                    <a href="registro.html" class="nav-link p-2 m-3 text-white">Registrar Libro</a>
                 </li>
             </ul>
         </nav>
         <section class="row d-flex justify-content-center">
-            <div class="col-12 p-5 pt-0 col-lg-11">
+            <div class="col-12 p-5 pt-0 col-lg-11 table-responsive">
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr>
@@ -41,7 +41,8 @@
                     </thead>
                     <tbody>
                         <?php
-                        $cn = new mysqli("localhost", "root", "", "catalogo");
+                        include('./con_db.php');
+
 
                         $res = $cn->query("select * from libros");
                         while ($row = mysqli_fetch_array($res)) {
